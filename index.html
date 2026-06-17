@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <title>Turbo Ring 97</title>
+    <link rel="stylesheet" href="./style.css?v=20260617d" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="game-bar">
+        <div class="brand-mark">
+          <span class="brand-kicker">ARCADE STREET CLASH</span>
+          <strong>Turbo Ring 97</strong>
+        </div>
+        <div class="bar-actions">
+          <button id="modeButton" class="icon-button" type="button" data-testid="mode-button">CPU</button>
+          <button id="musicButton" class="icon-button" type="button" data-testid="music-button">音乐</button>
+          <button id="fullscreenButton" class="icon-button fullscreen-button" type="button" data-testid="fullscreen-button">全屏</button>
+        </div>
+      </header>
+
+      <main class="stage-wrap">
+        <canvas id="gameCanvas" width="1280" height="720" aria-label="Turbo Ring 97 game canvas"></canvas>
+
+        <section id="hud" class="hud" hidden>
+          <div class="fighter-panel left">
+            <span id="p1Tag" class="player-tag">P1</span>
+            <strong id="p1Name">Nissan GT-R</strong>
+            <div class="meter health"><span id="p1Health"></span></div>
+            <div class="meter boost"><span id="p1Boost"></span></div>
+            <div class="meter special"><span id="p1Special"></span></div>
+          </div>
+
+          <div class="round-clock">
+            <span id="roundTime">99</span>
+          </div>
+
+          <div class="fighter-panel right">
+            <span id="p2Tag" class="player-tag">CPU</span>
+            <strong id="p2Name">Porsche 911</strong>
+            <div class="meter health"><span id="p2Health"></span></div>
+            <div class="meter boost"><span id="p2Boost"></span></div>
+            <div class="meter special"><span id="p2Special"></span></div>
+          </div>
+        </section>
+
+        <div id="cinematicText" class="cinematic-text" aria-live="polite">
+          <strong></strong>
+          <span></span>
+        </div>
+
+        <section id="selectScreen" class="overlay select-screen" data-testid="select-screen">
+          <div class="select-head">
+            <span class="eyebrow">MIDNIGHT MACHINE BATTLE</span>
+            <h1>Turbo Ring 97</h1>
+            <p>选车，上街，撞出冠军气场。</p>
+          </div>
+
+          <div id="rosterGrid" class="roster-grid" data-testid="roster-grid"></div>
+
+          <div class="select-footer">
+            <div id="rivalSlot" class="rival-slot">
+              <span>RIVAL</span>
+              <strong>Porsche 911</strong>
+            </div>
+            <button id="randomRivalButton" class="secondary-button" type="button" data-testid="random-rival-button">换对手</button>
+            <button id="startButton" class="primary-button" type="button" data-testid="start-button">点火开战</button>
+          </div>
+        </section>
+
+        <section id="resultScreen" class="overlay result-screen hidden" data-testid="result-screen">
+          <div class="result-panel">
+            <span id="resultKicker" class="eyebrow">FINISH</span>
+            <h2 id="resultTitle">街头制霸</h2>
+            <p id="resultLine">引擎还在咆哮，下一局更狠。</p>
+            <div class="result-actions">
+              <button id="rematchButton" class="primary-button" type="button" data-testid="rematch-button">再来一局</button>
+              <button id="changeCarButton" class="secondary-button" type="button" data-testid="change-car-button">重新选车</button>
+            </div>
+          </div>
+        </section>
+
+        <div id="touchControls" class="touch-controls" aria-hidden="true">
+          <div class="touch-cluster movement">
+            <button type="button" data-control="left">‹</button>
+            <button type="button" data-control="up">▲</button>
+            <button type="button" data-control="right">›</button>
+          </div>
+          <div class="touch-cluster combat">
+            <button type="button" data-control="guard">盾</button>
+            <button type="button" data-control="attack">撞</button>
+            <button type="button" data-control="dash">漂</button>
+            <button type="button" data-control="special">爆</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="./game.js?v=20260617d"></script>
+  </body>
+</html>
